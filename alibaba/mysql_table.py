@@ -5,8 +5,7 @@ from sqlalchemy import create_engine, Column, Integer, String, DateTime, Boolean
 from sqlalchemy.ext.declarative import declarative_base 
 
 
-# MYSQL_URL = 'mysql+pymysql://root:qwerasdf@localhost:3306/alibaba?charset=utf8'
-MYSQL_URL = 'mysql+pymysql://root:WhenChenpin998@qq.com@144.34.211.124:3306/alibaba?charset=utf8'
+MYSQL_URL = 'mysql+pymysql://root:qwerasdf@localhost:3306/alibaba?charset=utf8'
 
 engine = create_engine(MYSQL_URL)  
 Base = declarative_base()

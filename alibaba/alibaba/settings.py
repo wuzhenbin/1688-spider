@@ -20,18 +20,16 @@ PROCYURL = 'http://localhost:5555/random'
 # 爬取关键词
 KEYWORDS = ['短袖']
 
-
-# MYSQL_URL = 'mysql+pymysql://root:qwerasdf@localhost:3306/alibaba?charset=utf8'
-MYSQL_URL = 'mysql+pymysql://root:WhenChenpin998@qq.com@144.34.211.124:3306/alibaba?charset=utf8'
-
+# mysql服务器地址
+MYSQL_URL = 'mysql+pymysql://root:qwerasdf@localhost:3306/alibaba?charset=utf8'
 
 LOG_LEVEL= 'INFO'
 
 # scrapy-redis 配置
 SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
-# redis
-REDIS_URL = 'redis://:whenchenpin@144.34.211.124:6379'
+# redis配置 根据自己的情况配置 括号分别为password host port
+REDIS_URL = 'redis://:{}@{}:{}'
 # 配置持久化
 SCHEDULER_PERSIST = True
 
