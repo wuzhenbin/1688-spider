@@ -22,8 +22,8 @@ class Product(Base):
     shop = Column(String(100))
 
 class SqlalchemyPipeline(object):
-    def __init__(self, mysql_url, mysql_user, mysql_pass, mysql_database):
-        engine = create_engine('mysql+pymysql://{}:{}@{}/{}?charset=utf8'.format(mysql_user,mysql_pass,mysql_url,mysql_database))
+    def __init__(self, mysql_url):
+        engine = create_engine(mysql_url)
         Session = sessionmaker(bind=engine)
         self.session = Session()
 
@@ -47,10 +47,7 @@ class SqlalchemyPipeline(object):
     @classmethod
     def from_crawler(cls, crawler):
         return cls(
-            mysql_url = crawler.settings.get('MYSQL_URL'),
-            mysql_user = crawler.settings.get('MYSQL_USER'),
-            mysql_pass = crawler.settings.get('MYSQL_PASS'),
-            mysql_database = crawler.settings.get('MYSQL_DATABASE')
+            mysql_url = crawler.settings.get('MYSQL_URL')
         )
 
     def process_item(self, item, spider):

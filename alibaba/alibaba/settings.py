@@ -20,16 +20,20 @@ PROCYURL = 'http://localhost:5555/random'
 # 爬取关键词
 KEYWORDS = ['短袖']
 
-# mysql
-MYSQL_URL = 'localhost:3306'
-MYSQL_USER = 'root'
-MYSQL_PASS = 'qwerasdf'
-MYSQL_DATABASE = 'alibaba'
+
+# MYSQL_URL = 'mysql+pymysql://root:qwerasdf@localhost:3306/alibaba?charset=utf8'
+MYSQL_URL = 'mysql+pymysql://root:WhenChenpin998@qq.com@144.34.211.124:3306/alibaba?charset=utf8'
 
 
 LOG_LEVEL= 'INFO'
 
-
+# scrapy-redis 配置
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+# redis
+REDIS_URL = 'redis://:whenchenpin@144.34.211.124:6379'
+# 配置持久化
+SCHEDULER_PERSIST = True
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'alibaba (+http://www.yourdomain.com)'
